@@ -56,121 +56,49 @@
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
           <div class="col-md-9 ftco-animate pb-5">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Car details <i class="ion-ios-arrow-forward"></i></span></p>
-            <h1 class="mb-3 bread">Car Details</h1>
+            <h1 class="mb-3 bread">Formulario de Inscripcion</h1>
           </div>
         </div>
       </div>
     </section>
 
-    
-    <section class="ftco-section contact-section">
-      <div class="container">
-        <div class="row block-9 justify-content-center mb-5">
-          <div class="col-md-8 mb-md-5">
-          	<h2 class="text-center">Completa el formulario de inscripción</h2>
-            <form action="#" class="bg-light p-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
-    </section>
-    <h1>Input Form</h1>
-		<form:form action="addUser" method="post" modelAttribute="user" class="bg-light p-5 contact-form">
+
+	<form:form action="addUser" method="post" modelAttribute="user" class="bg-light p-5 contact-form">
 		<div class="form-group">
                     <a>nombre</a>
-                    <form:input path="name" class="form-control" placeholder="Email" /> <br />
+                    <form:input path="name" class="form-control" placeholder="Nombre" /> <br />
                     <form:errors path="name" cssClass="error" />
                 </div>
               <div class="form-group">
-                  <form:input path="email" /> <br />
+                  <form:input path="email" class="form-control" placeholder="Email"  /> <br />
                   <form:errors path="email" cssClass="error" />
               </div>
               <div class="form-group">
-               	  <form:input path="password" /> <br />
+               	  <form:input path="password" class="form-control" placeholder="Contraseña" type="password" /> <br />
               </div>
               <div class="form-group">
-                  <form:input path="num_contact" /> <br />
+                  <form:input path="num_contact" class="form-control" placeholder="Numero de contacto" /> <br />
               </div>
+              <div class="form-group">
+                  <form:input path="finc_n" class="form-control" placeholder="Nombre de la finca" /> <br />
+              </div>
+              <div class="form-group">
+                  <form:input path="Hect" class="form-control" placeholder="Hectareas" /> <br />
+              </div>
+               <div class="form-group">
+                  <form:input path="ener_id" class="form-control" placeholder="Energia" /> <br />
+              </div>
+               <div class="form-group">
+                  <form:input path="estatus" class="form-control" placeholder="Estatus de la finca" /> <br />
+              </div>
+               <div class="form-group">
+                  <form:input path="Direccion" class="form-control" placeholder="Direccion" /> <br />
+              </div>
+              
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
-                    <table>
-				<tr>
-					<td>Name</td>
-					<td>
-						<form:input path="name" class="form-control" placeholder="Email" /> <br />
-						<form:errors path="name" cssClass="error" />
-					</td>
-				</tr>
-				<tr>
-					<td>Email</td>
-					<td>
-						<form:input path="email" /> <br />
-						<form:errors path="email" cssClass="error" />
-					</td>
-				</tr>
-                                
-                                <tr>
-					<td>Contraseña</td>
-					<td>
-						<form:input path="password" /> <br />
-					</td>
-				</tr>
-                                <tr>
-					<td>Numero de Contacto</td>
-					<td>
-						<form:input path="num_contact" /> <br />
-					</td>
-				</tr>
-                                <tr>
-					<td>Nombre de la finca</td>
-					<td>
-						<form:input path="finc_n" /> <br />
-					</td>
-				</tr>
-                                <tr>
-					<td>Hectareas</td>
-					<td>
-						<form:input path="Hect" /> <br />
-					</td>
-				</tr>
-                                <tr>
-					<td>Energia</td>
-					<td>
-						<form:input path="ener_id" /> <br />
-					</td>
-				</tr>
-                                <tr>
-					<td>Estatus de la finca</td>
-					<td>
-						<form:input path="estatus" /> <br />
-					</td>
-				</tr>
-                                <tr>
-					<td>Direccion de la finca</td>
-					<td>
-						<form:input path="Direccion" /> <br />
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2"><button type="submit">Submit</button></td>
-				</tr>
-			</table>
-		</form:form>
-		
+         </form:form>           		
 		<h2>lista de fincas</h2>
 		<table>
 			<tr>
