@@ -88,12 +88,30 @@
             </form>
     </section>
     <h1>Input Form</h1>
-		<form:form action="addUser" method="post" modelAttribute="user">
-			<table>
+		<form:form action="addUser" method="post" modelAttribute="user" class="bg-light p-5 contact-form">
+		<div class="form-group">
+                    <a>nombre</a>
+                    <form:input path="name" class="form-control" placeholder="Email" /> <br />
+                    <form:errors path="name" cssClass="error" />
+                </div>
+              <div class="form-group">
+                  <form:input path="email" /> <br />
+                  <form:errors path="email" cssClass="error" />
+              </div>
+              <div class="form-group">
+               	  <form:input path="password" /> <br />
+              </div>
+              <div class="form-group">
+                  <form:input path="num_contact" /> <br />
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+              </div>
+                    <table>
 				<tr>
 					<td>Name</td>
 					<td>
-						<form:input path="name" /> <br />
+						<form:input path="name" class="form-control" placeholder="Email" /> <br />
 						<form:errors path="name" cssClass="error" />
 					</td>
 				</tr>
