@@ -1,27 +1,32 @@
 package com.howtodoinjava.demo.spring.model;
 
 import static com.mchange.v2.c3p0.impl.C3P0Defaults.password;
+
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_users")
+@Table(name = "USERS")
 public class User implements Serializable {
 
    @Id
-   @Column(name = "USER_ID")
-   private Long id=0L;
+   
 
-   @Column(name = "USER_NAME")
+   @Column(name = "USERNAME")
    @Size(max = 20, min = 3, message = "{user.name.invalid}")
    @NotEmpty(message="Please Enter your name")
    private String name;
@@ -31,9 +36,12 @@ public class User implements Serializable {
    @NotEmpty(message="Please Enter your email")
    private String email;
    
-   @Column(name = "password", unique = true)
+   @Column(name = "PASSWORD", unique = true)
    @NotEmpty(message="Please Enter your password")
    private String password;
+   
+   @Column(name = "ENABLED", nullable = false)
+    private boolean enabled;
    
    @Column(name = "num_contact")
    private Long num_contact;
@@ -53,31 +61,36 @@ public class User implements Serializable {
    @Column(name = "Direccion", unique = true)
    private String Direccion;
    
-   
+ @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+ private Set<Authorities> authorities = new HashSet<>();
 
-   public Long getId() {
-      return id;
-   }
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
 
-   public void setId(Long id) {
-      this.id = id;
-   }
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-   public String getName() {
-      return name;
-   }
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
 
-   public void setName(String name) {
-      this.name = name;
-   }
-
-   public String getEmail() {
-      return email;
-   }
-
-   public void setEmail(String email) {
-      this.email = email;
-   }
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     /**
      * @return the password
@@ -91,6 +104,20 @@ public class User implements Serializable {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return the enabled
+     */
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    /**
+     * @param enabled the enabled to set
+     */
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     /**
@@ -150,14 +177,14 @@ public class User implements Serializable {
     }
 
     /**
-     * @return the status
+     * @return the estatus
      */
     public String getEstatus() {
         return estatus;
     }
 
     /**
-     * @param estatus the status to set
+     * @param estatus the estatus to set
      */
     public void setEstatus(String estatus) {
         this.estatus = estatus;
@@ -176,4 +203,20 @@ public class User implements Serializable {
     public void setDireccion(String Direccion) {
         this.Direccion = Direccion;
     }
+
+    /**
+     * @return the authorities
+     */
+    public Set<Authorities> getAuthorities() {
+        return authorities;
+    }
+
+    /**
+     * @param authorities the authorities to set
+     */
+    public void setAuthorities(Set<Authorities> authorities) {
+        this.authorities = authorities;
+    }
+
+   
 }

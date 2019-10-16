@@ -44,7 +44,7 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">Quienes somos</a></li>
-            <li class="nav-item"><a href="car.html" class="nav-link">Inscribete</a></li>
+            <li class="nav-item"><a href="editUsers.jsp" class="nav-link">Inscribete</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contactanos</a></li>
           </ul>
         </div>
